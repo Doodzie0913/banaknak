@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Hedorio - Graphic & Web Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-warm': '#0F172A',
+                        'card-bg': '#1E293B',
+                        'accent-orange': '#2563EB', // Royal Blue Accent
+                        'accent-dark-orange': '#1D4ED8',
+                        'text-main': '#F8FAFC',
+                        'text-muted': '#94A3B8',
+                        'border-light': '#334155',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Outlined Header Text Effect */
+        .text-stroke {
+            -webkit-text-stroke: 2px #F8FAFC;
+            color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .text-stroke {
+                -webkit-text-stroke: 3px #F8FAFC;
+            }
+        }
+
+        /* Custom App Icon styling */
+        .app-icon {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .app-icon:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 20px -3px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Button Glow & Pulse Effects */
+        .btn-glow {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-glow:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
+        }
+
+        /* Floating Animation for Decorative 3D Spheres & Shapes */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        @keyframes floatFast {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.03); }
+        }
+        .animate-float-slow {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        .animate-float-fast {
+            animation: floatFast 4s ease-in-out infinite;
+        }
+
+        /* SVG Circular Progress Bar */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-blue-950 to-slate-950 text-text-main font-sans min-h-screen py-6 md:py-12 px-4 sm:px-6 lg:px-8 selection:bg-blue-600 selection:text-white">
+
+    <div class="max-w-4xl mx-auto relative bg-[#0F172A]/90 backdrop-blur-md shadow-2xl rounded-3xl p-5 sm:p-8 md:p-12 border border-blue-500/20 overflow-hidden">
+        
+        <!-- ================= 3D DECORATIVE GRAPHICS OVERLAYS ================= -->
+        <!-- Top Left Ribbon -->
+        <svg class="absolute -top-4 -left-4 w-28 h-28 sm:w-36 sm:h-36 z-0 opacity-90 animate-float-slow pointer-events-none" viewBox="0 0 150 150">
+            <path d="M 20 20 Q 60 10, 80 50 T 140 70" fill="none" stroke="#2563EB" stroke-width="16" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Top Right 3D Sphere -->
+        <div class="absolute top-6 right-6 sm:top-10 sm:right-10 w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-radial from-blue-400 via-blue-600 to-blue-900 shadow-lg shadow-blue-500/30 animate-float-fast z-10 pointer-events-none"></div>
+
+        <!-- Middle Right Decorative Ribbon -->
+        <svg class="absolute top-[22%] -right-8 w-32 h-32 sm:w-44 sm:h-44 z-0 opacity-90 animate-float-slow pointer-events-none" viewBox="0 0 200 200">
+            <path d="M 20 100 C 50 20, 100 180, 150 60 S 180 140, 200 120" fill="none" stroke="#2563EB" stroke-width="22" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Mid-Page Floating Sphere -->
+        <div class="absolute top-[58%] right-4 sm:right-8 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-radial from-blue-400 via-blue-600 to-blue-900 shadow-xl z-10 animate-float-slow pointer-events-none"></div>
+
+        <!-- Bottom Left Ribbon -->
+        <svg class="absolute -bottom-8 -left-8 w-36 h-36 sm:w-48 sm:h-48 z-0 opacity-90 animate-float-fast pointer-events-none" viewBox="0 0 200 200">
+            <path d="M 30 170 C 60 80, 120 180, 160 90" fill="none" stroke="#2563EB" stroke-width="24" stroke-linecap="round"/>
+        </svg>
+
+        <!-- ================= HERO HEADER SECTION ================= -->
+        <header class="relative z-10 text-center pt-2 pb-6">
+            <div class="relative inline-block w-full">
+                <!-- Massive Title Text -->
+                <h1 class="font-heading font-black tracking-tight uppercase leading-none text-4xl sm:text-6xl md:text-7xl lg:text-[80px]">
+                    <span class="block text-text-main drop-shadow-sm">GRAPHIC &</span>
+                    <span class="block text-stroke tracking-normal">WEB DESIGNER</span>
+                </h1>
+
+                <!-- NEW DEDICATED ROOM / FRAME FOR THE 2x2 PORTRAIT -->
+                <div class="relative mt-6 sm:mt-8 mb-4 flex justify-center">
+                    <div class="p-3 sm:p-4 bg-gradient-to-b from-blue-900/40 to-slate-900/80 border-2 border-blue-500/40 rounded-3xl shadow-2xl backdrop-blur-sm relative group">
+                        <!-- Decorative Frame Corners -->
+                        <div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-400 rounded-tl-md"></div>
+                        <div class="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-blue-400 rounded-tr-md"></div>
+                        <div class="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-blue-400 rounded-bl-md"></div>
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-blue-400 rounded-br-md"></div>
+
+                        <!-- 2x2 Image Slot (Square Aspect Ratio) -->
+                        <div class="w-48 h-48 sm:w-60 sm:h-60 rounded-2xl overflow-hidden border border-blue-400/30 relative">
+                            <img 
+                                src="michael 2x2.jpg" 
+                                alt="Michael Hedorio Portrait" 
+                                class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x400/2563EB/FFFFFF?text=2x2+Photo';"
+                            />
+                            <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Designer Name Badge -->
+                <div class="text-center sm:text-right pr-0 sm:pr-12 md:pr-20 mt-2 relative z-20">
+                    <h2 class="font-heading font-bold text-lg sm:text-2xl md:text-3xl tracking-wider text-text-main uppercase drop-shadow-md">
+                        MICHAEL HEDORIO
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Portfolio Pill Badge with Down Arrow and New Transition Effect -->
+            <div class="flex flex-col items-center sm:items-start sm:pl-8 mt-4 sm:-mt-6 z-20 relative">
+                <div class="text-text-main mb-2 sm:pl-6">
+                    <i class="fa-solid fa-arrow-down text-xl sm:text-2xl text-blue-400 animate-bounce"></i>
+                </div>
+                <a href="#about" class="btn-glow bg-blue-600 text-white text-xs sm:text-sm font-bold tracking-widest px-8 py-3 rounded-full border border-blue-400/50 flex items-center gap-2 uppercase">
+                    PORTFOLIO
+                </a>
+            </div>
+        </header>
+
+        <!-- ================= ABOUT ME SECTION ================= -->
+        <section id="about" class="relative z-10 mt-8 mb-10">
+            <h3 class="font-heading text-xl sm:text-2xl font-bold uppercase text-text-main tracking-wider mb-3">
+                ABOUT ME
+            </h3>
+            <p class="text-sm sm:text-base text-text-muted leading-relaxed max-w-3xl font-medium">
+                Aspiring Web Designer, a Basketball Varsity student in Torres Capitol Student, I am building a portfolio in designs, photo editing and basic video editing, ready to bring fresh ideas and enthusiasm to a creative team.
+            </p>
+        </section>
+
+        <!-- HR LINE -->
+        <div class="border-b border-border-light my-8"></div>
+
+        <!-- ================= EDUCATION & CONTACT GRID ================= -->
+        <section class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+            
+            <!-- Education Card -->
+            <div class="bg-card-bg border border-border-light p-6 rounded-2xl shadow-sm hover:border-blue-500/50 transition-all relative overflow-hidden">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow-md shadow-blue-500/30">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-wide">EDUCATION</h3>
+                </div>
+                
+                <div class="space-y-4 pl-2">
+                    <div class="relative pl-4 border-l-2 border-blue-500">
+                        <h4 class="font-bold text-sm sm:text-base text-text-main">• Torres Capitol College, Inc</h4>
+                        <p class="text-xs sm:text-sm text-text-muted font-medium">Bachelor of Science in Information technology</p>
+                        <span class="inline-block text-xs font-semibold bg-blue-950/60 text-blue-300 border border-blue-800/40 px-2.5 py-1 rounded-md mt-1">2024-Present</span>
+                    </div>
+                    
+                    <div class="relative pl-4 border-l-2 border-blue-500/40">
+                        <h4 class="font-bold text-sm sm:text-base text-text-main">• Masiricampo Abantas Memorial High School</h4>
+                        <p class="text-xs sm:text-sm text-text-muted font-medium">(Bachelor of Science)</p>
+                        <span class="inline-block text-xs font-semibold bg-blue-950/60 text-blue-300 border border-blue-800/40 px-2.5 py-1 rounded-md mt-1">2021-2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="bg-card-bg border border-border-light p-6 rounded-2xl shadow-sm hover:border-blue-500/50 transition-all">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg shadow-md shadow-blue-500/30">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold uppercase tracking-wide">CONTACT</h3>
+                </div>
+
+                <div class="space-y-3 pl-2">
+                    <!-- Phone -->
+                    <a href="tel:+639660277182" class="flex items-center gap-3 group text-text-muted hover:text-blue-400 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-blue-300 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold">+639660277182</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:michaeladrianhedoriol@gmail.com" class="flex items-center gap-3 group text-text-muted hover:text-blue-400 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-blue-300 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-envelope text-xs"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold">michaeladrianhedoriol@gmail.com</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/adrian_mch12" target="_blank" class="flex items-center gap-3 group text-text-muted hover:text-blue-400 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-blue-950/80 border border-blue-800/40 flex items-center justify-center text-blue-300 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold">adrian_mch12"</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WORK EXPERIENCE SECTION ================= -->
+        <section class="relative z-10 my-10">
+            <div class="section-divider mb-8 text-center border-b border-border-light pb-2">
+                <span class="font-heading text-2xl font-bold uppercase text-text-main tracking-wider">
+                    WORK EXPERIENCE
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Executive Role -->
+                <div class="bg-card-bg border border-border-light p-6 rounded-2xl relative hover:border-blue-500/50 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-blue-500/30">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm sm:text-base text-text-main">Student Service Portal Executive</h4>
+                                <p class="text-xs text-text-muted font-medium">Dr. Bhim Rao Ambedkar University, Agra</p>
+                            </div>
+                        </div>
+                        <span class="text-[11px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-full whitespace-nowrap">
+                            <i class="fa-regular fa-calendar-days mr-1"></i> 10 Months
+                        </span>
+                    </div>
+
+                    <!-- University Seal Graphic Badge -->
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-border-light">
+                        <ul class="text-xs sm:text-sm text-text-muted space-y-1.5 list-disc list-inside font-medium">
+                            <li>Worked on Student Service Portal</li>
+                            <li>Managed student queries and data</li>
+                            <li>Ensured smooth portal operations</li>
+                        </ul>
+                        <div class="w-14 h-14 rounded-full border-2 border-blue-500/40 p-1 flex items-center justify-center shrink-0 bg-blue-950/60 shadow-xs">
+                            <div class="w-full h-full rounded-full border border-dashed border-blue-400 flex flex-col items-center justify-center text-[8px] text-center font-bold text-text-main leading-tight">
+                                <i class="fa-solid fa-university text-blue-400 mb-0.5"></i>
+                                AGRA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Field Role -->
+                <div class="bg-card-bg border border-border-light p-6 rounded-2xl relative hover:border-blue-500/50 transition-all">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-blue-500/30">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm sm:text-base text-text-main">Graphic Designer</h4>
+                                <span class="inline-block text-[11px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-full mt-1">
+                                    <i class="fa-regular fa-calendar-days mr-1"></i> 3 years
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-border-light">
+                        <ul class="text-xs sm:text-sm text-text-muted space-y-1.5 list-disc list-inside font-medium">
+                            <li>Worked in the medical field</li>
+                            <li>Assisted in patient care and support services</li>
+                            <li>Gained strong communication and teamwork skills</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HR LINE -->
+        <div class="border-b border-border-light my-8"></div>
+
+        <!-- ================= BOTTOM GRID: LANGUAGE, SOFTWARE, AI TOOLS ================= -->
+        <section class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+            
+            <!-- Language Skill Progress Rings -->
+            <div class="bg-card-bg border border-border-light p-5 rounded-2xl text-center hover:border-blue-500/50 transition-all">
+                <h3 class="font-heading text-lg font-bold uppercase text-text-main tracking-wider mb-4">
+                    LANGUAGE
+                </h3>
+                <div class="flex justify-around items-center">
+                    <!-- Ilonggo 100% Ring -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-20 h-20">
+                            <svg class="w-full h-full" viewBox="0 0 36 36">
+                                <path class="text-slate-700" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="text-blue-500 progress-ring__circle" stroke-width="3.5" stroke-dasharray="100, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center font-bold text-sm text-text-main">
+                                100%
+                            </div>
+                        </div>
+                        <span class="mt-2 text-xs font-bold text-text-main uppercase">Hindi</span>
+                    </div>
+
+                    <!-- English 70% Ring -->
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-20 h-20">
+                            <svg class="w-full h-full" viewBox="0 0 36 36">
+                                <path class="text-slate-700" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="text-blue-500 progress-ring__circle" stroke-width="3.5" stroke-dasharray="70, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center font-bold text-sm text-text-main">
+                                70%
+                            </div>
+                        </div>
+                        <span class="mt-2 text-xs font-bold text-text-main uppercase">English</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Skills App Grid -->
+            <div class="bg-card-bg border border-border-light p-5 rounded-2xl text-center hover:border-blue-500/50 transition-all">
+                <h3 class="font-heading text-lg font-bold uppercase text-text-main tracking-wider mb-4">
+                    SOFTWARE SKILLS
+                </h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <!-- Photoshop -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-[#001E36] border border-[#00C8FF] rounded-lg flex items-center justify-center font-bold text-[#00C8FF] text-base shadow-sm">
+                            Ps
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">Photoshop</span>
+                    </div>
+
+                    <!-- Canva -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-[#00C4CC] to-[#7D2AE8] rounded-lg flex items-center justify-center font-bold text-white text-xs shadow-sm">
+                            Canva
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">Canva</span>
+                    </div>
+
+                    <!-- Illustrator -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-[#330000] border border-[#FF9A00] rounded-lg flex items-center justify-center font-bold text-[#FF9A00] text-base shadow-sm">
+                            Ai
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">Illustrator</span>
+                    </div>
+
+                    <!-- Alight Motion -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-[#002D22] border border-[#00E6A5] rounded-lg flex items-center justify-center font-bold text-[#00E6A5] text-xs shadow-sm">
+                            <i class="fa-solid fa-play text-xs"></i>
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">Alight Motion</span>
+                    </div>
+
+                    <!-- KineMaster -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-[#FF2A55] rounded-lg flex items-center justify-center font-bold text-white text-xs shadow-sm">
+                            K
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">KineMaster</span>
+                    </div>
+
+                    <!-- Picsart -->
+                    <div class="flex flex-col items-center app-icon">
+                        <div class="w-10 h-10 bg-gradient-to-b from-[#C427B3] to-[#4323A5] rounded-lg flex items-center justify-center font-bold text-white text-xs shadow-sm">
+                            P
+                        </div>
+                        <span class="text-[10px] font-semibold text-text-muted mt-1">Picsart</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div class="bg-card-bg border border-border-light p-5 rounded-2xl text-center flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                <div>
+                    <h3 class="font-heading text-lg font-bold uppercase text-text-main tracking-wider mb-4">
+                        AI TOOLS
+                    </h3>
+                    <div class="flex justify-center items-center gap-4 mb-3">
+                        <!-- ChatGPT -->
+                        <div class="w-10 h-10 rounded-full border border-blue-500/30 flex items-center justify-center bg-blue-950/60 shadow-xs">
+                            <i class="fa-solid fa-robot text-lg text-blue-300"></i>
+                        </div>
+
+                        <!-- Gemini Star Icon -->
+                        <div class="w-10 h-10 rounded-full border border-blue-500/30 flex items-center justify-center bg-blue-950/60 shadow-xs">
+                            <i class="fa-solid fa-sparkles text-lg text-blue-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-4 text-xs font-bold text-text-main mb-2">
+                        <span>ChatGPT</span>
+                        <span>Google Gemini</span>
+                    </div>
+                </div>
+                <p class="text-[11px] text-text-muted font-medium leading-tight">
+                    AI tools help me enhance creativity, automate tasks and deliver smarter design solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- HR LINE -->
+        <div class="border-b border-border-light my-8"></div>
+
+        <!-- ================= SKILLS BADGES SECTION ================= -->
+        <section class="relative z-10 my-8">
+            <h3 class="font-heading text-2xl font-bold uppercase text-text-main tracking-wider text-center mb-6">
+                SKILLS
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <!-- Interactive Skill Tags with Glow Hover Effect -->
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-headset text-blue-400"></i>
+                    <span>Communication</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-pen-nib text-blue-400"></i>
+                    <span>Logo Design</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-image text-blue-400"></i>
+                    <span>Poster Design</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-book-open text-blue-400"></i>
+                    <span>Brochure Design</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-paintbrush text-blue-400"></i>
+                    <span>Illustration</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-copyright text-blue-400"></i>
+                    <span>Branding</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-tag text-blue-400"></i>
+                    <span>Label Design</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-share-nodes text-blue-400"></i>
+                    <span>Social Media</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-video text-blue-400"></i>
+                    <span>Video Editing</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-cubes text-blue-400"></i>
+                    <span>Prototyping</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-object-group text-blue-400"></i>
+                    <span>UI/UX Design</span>
+                </div>
+
+                <div class="btn-glow flex items-center gap-2 bg-card-bg border border-border-light px-3.5 py-2.5 rounded-xl text-xs font-semibold text-text-main cursor-pointer">
+                    <i class="fa-solid fa-wand-magic-sparkles text-blue-400"></i>
+                    <span>AI Worked</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="mt-12 text-center text-xs text-text-muted pt-6 border-t border-border-light font-medium">
+            <p>© 2026 Michael Hedorio . Designed with precision & creative flair.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
