@@ -1,0 +1,2 @@
+# banaknak
+basta kay portfolio
